@@ -1,10 +1,9 @@
+import Title from './components/Title';
 import './App.css';
 
 function App() {
   return (
-    <div>
-      Hello World
-    </div>
+    <Title props="Gerenciador de senhas" />
   );
 }
 
