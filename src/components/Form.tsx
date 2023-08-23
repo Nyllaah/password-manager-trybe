@@ -1,6 +1,10 @@
 import Button from './button';
 
-function Form() {
+type FormProps = {
+  setShowForm: boolean
+};
+
+function Form({ setShowForm }: FormProps) {
   return (
     <form>
       <label>
@@ -20,7 +24,7 @@ function Form() {
         <input />
       </label>
       <Button btnName="Cadastrar" />
-      <Button btnName="Cancelar" />
+      <button onClick={ () => setShowForm }>Cancelar</button>
     </form>
   );
 }
