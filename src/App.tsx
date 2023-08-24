@@ -2,17 +2,18 @@ import { useState } from 'react';
 
 import Title from './components/Title';
 import Form from './components/Form';
-import PasswordCardTypes from './types';
+import { PasswordCardTypes } from './types';
+import PasswordList from './components/PasswordList';
 
 import './App.css';
 
 function App() {
-  const [showForm, setShowForm] = useState(false);
-  const [passwordList, setPasswordList] = useState([]);
+  const [showForm, setShowForm] = useState<boolean>(false);
+  const [passwordList, setPasswordList] = useState<PasswordCardTypes[]>([]);
 
-  function addPassword(newPassword: PasswordCardTypes) {
+  const addPassword = (newPassword: PasswordCardTypes) => {
     setPasswordList([...passwordList, newPassword]);
-  }
+  };
 
   return (
     <>
@@ -25,10 +26,11 @@ function App() {
         )}
       </div>
       <div>
-        <PasswordList password={ passwordList } />
-      </div>
-      <div>
-        { passwordList === 0 ? (<p>mostra</p>) : (<p>nao mostra</p>)}
+        { passwordList.length === 0 ? (
+          <p>Nenhuma senha cadastrada...</p>
+        ) : (
+          <PasswordList passwordList={ passwordList } />
+        )}
       </div>
     </>
   );

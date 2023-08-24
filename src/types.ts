@@ -1,6 +1,6 @@
-export type PasswordCardTypes = { newPassword:
-{ service: string,
+export type PasswordCardTypes = {
+  service: string,
   login: string,
   password: string,
-  url: string }
+  url: string
 };

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import PasswordCardTypes from '../types';
+import { PasswordCardTypes } from '../types';
 
 type FormProps = {
   setShowForm: (show: boolean) => void,
@@ -78,10 +78,8 @@ function Form({ setShowForm, addPassword }: FormProps) {
       <button
         type="submit"
         disabled={ isFormValid() }
-
       >
         Cadastrar
-
       </button>
       <button type="button" onClick={ () => setShowForm }>Cancelar</button>
       <ul>

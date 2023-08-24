@@ -1,6 +1,6 @@
 import { PasswordCardTypes } from '../types';
 
-function PasswordCard({ newPassword: { service, login, password, url } }:
+function PasswordCard({ service, login, password, url }:
 PasswordCardTypes) {
   return (
     <div>
