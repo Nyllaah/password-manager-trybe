@@ -1,11 +1,7 @@
-type PasswordCardProps = {
-  service: string,
-  login: string,
-  password: string,
-  url: string
-};
+import { PasswordCardTypes } from '../types';
 
-function PasswordCard({ service, login, password, url }: PasswordCardProps) {
+function PasswordCard({ newPassword: { service, login, password, url } }:
+PasswordCardTypes) {
   return (
     <div>
       <a href={ url }>{service}</a>

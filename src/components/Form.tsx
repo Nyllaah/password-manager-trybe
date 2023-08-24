@@ -1,11 +1,12 @@
 import { useState } from 'react';
-// import Button from './button';
+import PasswordCardTypes from '../types';
 
 type FormProps = {
-  setShowForm: (show: boolean) => void
+  setShowForm: (show: boolean) => void,
+  addPassword: (newPassword: PasswordCardTypes) => void
 };
 
-function Form({ setShowForm }: FormProps) {
+function Form({ setShowForm, addPassword }: FormProps) {
   const [formData, setFormData] = useState({
     service: '',
     login: '',
@@ -39,18 +40,25 @@ function Form({ setShowForm }: FormProps) {
     );
   }
 
-  function PasswordValidation(validation: boolean) {
+  function passwordValidation(validation: boolean) {
     return (validation ? 'valid-password-check'
       : 'invalid-password-check'
     );
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    // handleChange(e);
+  function handleSumit(e: React.FormEvent<HTMLElement>) {
+    e.preventDefault();
+    addPassword(formData);
+    setFormData({
+      service: '',
+      login: '',
+      password: '',
+      url: '',
+    });
   }
 
   return (
-    <form onSubmit={ handleSubmit }>
+    <form onSubmit={ handleSumit }>
       <label htmlFor="service">
         Nome do Serviço
         <input onChange={ handleChange } name="service" value={ formData.service } />
@@ -67,19 +75,26 @@ function Form({ setShowForm }: FormProps) {
         URL
         <input onChange={ handleChange } name="url" value={ formData.url } />
       </label>
-      <button type="submit" disabled={ isFormValid() }>Cadastrar</button>
+      <button
+        type="submit"
+        disabled={ isFormValid() }
+
+      >
+        Cadastrar
+
+      </button>
       <button type="button" onClick={ () => setShowForm }>Cancelar</button>
       <ul>
-        <li className={ PasswordValidation(isPasswordTooShort) }>
+        <li className={ passwordValidation(isPasswordTooShort) }>
           Possuir 8 ou mais caracteres
         </li>
-        <li className={ PasswordValidation(isPasswordTooLong) }>
+        <li className={ passwordValidation(isPasswordTooLong) }>
           Possuir até 16 caracteres
         </li>
-        <li className={ PasswordValidation(passwordHasLettersAndNumbers) }>
+        <li className={ passwordValidation(passwordHasLettersAndNumbers) }>
           Possuir letras e números
         </li>
-        <li className={ PasswordValidation(passwordHasSpecialChar) }>
+        <li className={ passwordValidation(passwordHasSpecialChar) }>
           Possuir algum caractere especial
         </li>
       </ul>
