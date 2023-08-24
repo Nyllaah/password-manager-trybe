@@ -1,13 +1,8 @@
 import { useState } from 'react';
-import { PasswordCardTypes } from '../types';
-
-type FormProps = {
-  setShowForm: (show: boolean) => void,
-  addPassword: (newPassword: PasswordCardTypes) => void
-};
+import { FormProps, FormDataProps } from '../types';
 
 function Form({ setShowForm, addPassword }: FormProps) {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormDataProps>({
     service: '',
     login: '',
     password: '',
@@ -55,6 +50,7 @@ function Form({ setShowForm, addPassword }: FormProps) {
       password: '',
       url: '',
     });
+    setShowForm(false);
   }
 
   return (

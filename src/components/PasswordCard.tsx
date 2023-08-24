@@ -1,13 +1,14 @@
-import { PasswordCardTypes } from '../types';
+import { PasswordCardProps } from '../types';
 
-function PasswordCard({ service, login, password, url }:
-PasswordCardTypes) {
+function PasswordCard({ handleRemove, service, login, password, url, id }:
+PasswordCardProps) {
   return (
-    <div>
+    <>
       <a href={ url }>{service}</a>
       <p>{`Login: ${login}`}</p>
       <p>{`Senha: ${password}`}</p>
-    </div>
+      <button data-testid="remove-btn" onClick={ () => handleRemove(id) }>Remover</button>
+    </>
   );
 }
 

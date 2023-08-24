@@ -1,22 +1,20 @@
-import { PasswordCardTypes } from '../types';
+import { PasswordListProps } from '../types';
 import PasswordCard from './PasswordCard';
 
-type PasswordListProps = {
-  passwordList: PasswordCardTypes[]
-};
-
-function PasswordList({ passwordList }: PasswordListProps) {
+function PasswordList({ passwordList, handleRemove }: PasswordListProps) {
   return (
     <>
-      {passwordList.map((card) => {
+      {passwordList.map((card, index) => {
         const { service, login, password, url } = card;
         return (
           <PasswordCard
-            key={ login }
+            key={ index }
+            id={ index }
             service={ service }
             login={ login }
             password={ password }
             url={ url }
+            handleRemove={ handleRemove }
           />
         );
       })}

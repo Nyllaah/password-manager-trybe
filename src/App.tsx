@@ -2,17 +2,22 @@ import { useState } from 'react';
 
 import Title from './components/Title';
 import Form from './components/Form';
-import { PasswordCardTypes } from './types';
+import { FormDataProps } from './types';
 import PasswordList from './components/PasswordList';
 
 import './App.css';
 
 function App() {
   const [showForm, setShowForm] = useState<boolean>(false);
-  const [passwordList, setPasswordList] = useState<PasswordCardTypes[]>([]);
+  const [passwordList, setPasswordList] = useState<FormDataProps[]>([]);
 
-  const addPassword = (newPassword: PasswordCardTypes) => {
+  const addPassword = (newPassword: FormDataProps) => {
     setPasswordList([...passwordList, newPassword]);
+  };
+
+  const handleRemove = (id: number) => {
+    const newList = passwordList.filter((card, index) => index !== id);
+    setPasswordList(newList);
   };
 
   return (
@@ -20,7 +25,10 @@ function App() {
       <div>
         <Title props="Gerenciador de senhas" />
         { showForm ? (
-          <Form setShowForm={ setShowForm } addPassword={ addPassword } />
+          <Form
+            setShowForm={ setShowForm }
+            addPassword={ addPassword }
+          />
         ) : (
           <button onClick={ () => setShowForm(true) }>Cadastrar nova senha</button>
         )}
@@ -29,7 +37,7 @@ function App() {
         { passwordList.length === 0 ? (
           <p>Nenhuma senha cadastrada...</p>
         ) : (
-          <PasswordList passwordList={ passwordList } />
+          <PasswordList handleRemove={ handleRemove } passwordList={ passwordList } />
         )}
       </div>
     </>
