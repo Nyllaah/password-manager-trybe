@@ -1,9 +1,17 @@
-type TitleProps = {
-  props: string
-};
-
-function Title({ props }: TitleProps) {
-  return <h1>{props}</h1>;
+function Title() {
+  return (
+    <h1>
+      Gerenciador
+      {' '}
+      <span className="title">*</span>
+      {' '}
+      de
+      {' '}
+      <span className="title">*</span>
+      {' '}
+      Senhas
+    </h1>
+  );
 }
 
 export default Title;

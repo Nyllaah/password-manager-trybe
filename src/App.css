@@ -1,3 +1,55 @@
+body {
+  background: #272a37;
+  margin-top: 89px;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-family: Roboto , sans-serif;
+  font-size: 65px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-bottom: 59px;
+}
+
+.title {
+  color: #3187e7;
+  font-family: Roboto , sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.new-pw-btn {
+  background: #3590f5;
+  border: 0;
+  border-radius: 100px;
+  color: white;
+  flex-shrink: 0;
+  font-family: Roboto , sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  height: 55px;
+  line-height: normal;
+  margin-bottom: 58px;
+  width: 256px;
+}
+
+.no-passwords {
+  color: #838383;
+  font-family: Roboto , sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 21px;
+  margin-top: 160px;
+}
+
 .valid-password-check {
   color: #aeffb6;
 }
