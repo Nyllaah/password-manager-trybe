@@ -1,5 +1,8 @@
 body {
+  align-items: center;
   background: #272a37;
+  display: flex;
+  flex-direction: column;
   margin-top: 89px;
   text-align: center;
 }
@@ -48,6 +51,161 @@ h1 {
   line-height: normal;
   margin-bottom: 21px;
   margin-top: 160px;
+}
+
+form {
+  align-content: center;
+  background: #1e2029;
+  border-radius: 10px;
+  display: flex;
+  flex-shrink: 0;
+  height: 412px;
+  justify-content: space-around;
+  margin-bottom: 71px;
+  width: 897px;
+}
+
+.form-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 525px;
+}
+
+input {
+  background: #3b3f50;
+  border: 0;
+  border-radius: 10px;
+  flex-shrink: 0;
+  height: 53px;
+  width: 523px;
+}
+
+label, .mandatory-message {
+  color: #8d8d8d;
+  font-family: Roboto , sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input-container {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-password-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-password-container input {
+  width: 236px;
+}
+
+.password-container {
+  align-items: center;
+  background-color: #3b3f50;
+  border: 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  height: 53px;
+  justify-content: space-between;
+  padding: 0 10px;
+  width: 236px;
+}
+
+.password-container input {
+  background-color: aliceblue;
+  height: 45px;
+  width: 190px;
+}
+
+.hide-btn {
+  background-color: #3b3f50;
+  background-image: url('./images/eye-closed.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0;
+  flex-shrink: 0;
+  height: 26px;
+  margin-top: 10px;
+  width: 35px;
+}
+
+.show-btn {
+  background-color: #3b3f50;
+  background-image: url('./images/eye-open.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0;
+  flex-shrink: 0;
+  height: 26px;
+  margin-top: 10px;
+  width: 35px;
+}
+
+.mandatory {
+  color: #d11d1d;
+  font-family: Roboto , sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.cancel-btn {
+  background: #1e2029;
+  border: 0;
+  border-radius: 100px;
+  color: #3590f5;
+  flex-shrink: 0;
+  font-family: Roboto , sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  height: 55px;
+  line-height: normal;
+  margin-bottom: 58px;
+  text-align: left;
+  width: 256px;
+}
+
+.pw-requirements {
+  background: #252730;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  font-family: Roboto , sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  height: 147px;
+  justify-content: space-around;
+  line-height: normal;
+  text-align: left;
+  width: 263px;
+}
+
+.checkbox {
+  background: #3590f5;
+  border-radius: 50px;
+  flex-shrink: 0;
+  height: 20px;
+  width: 40px;
 }
 
 .valid-password-check {

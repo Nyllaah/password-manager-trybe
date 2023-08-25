@@ -47,7 +47,6 @@ function App() {
             onClick={ () => setShowForm(true) }
           >
             Cadastrar nova senha
-
           </button>
         )}
       </div>

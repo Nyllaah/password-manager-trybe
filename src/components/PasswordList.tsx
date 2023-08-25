@@ -5,7 +5,7 @@ function PasswordList({ passwordList, handleRemove, handleCheckbox,
   showPasswords }: PasswordListProps) {
   return (
     <>
-      <div>
+      <div className="checkbox">
         <input type="checkbox" id="hide-passwords" onChange={ handleCheckbox } />
         <label htmlFor="hide-passwords">Esconder senhas</label>
       </div>
