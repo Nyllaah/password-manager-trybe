@@ -93,7 +93,7 @@ function Form({ setShowForm, addPassword }: FormProps) {
       >
         Cadastrar
       </button>
-      <button type="button" onClick={ () => setShowForm }>Cancelar</button>
+      <button type="button" onClick={ () => setShowForm(false) }>Cancelar</button>
       <ul>
         <li className={ passwordValidation(isPasswordTooShort) }>
           Possuir 8 ou mais caracteres
