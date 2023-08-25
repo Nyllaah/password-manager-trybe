@@ -3,7 +3,7 @@ body {
   background: #272a37;
   display: flex;
   flex-direction: column;
-  margin-top: 89px;
+  padding: 89px 0 62px;
   text-align: center;
 }
 
