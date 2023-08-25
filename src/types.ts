@@ -21,5 +21,7 @@ export type FormProps = {
 
 export type PasswordListProps = {
   handleRemove: (id: number) => void,
-  passwordList: FormDataProps[]
+  passwordList: FormDataProps[],
+  handleCheckbox:() => void,
+  showPasswords: boolean
 };

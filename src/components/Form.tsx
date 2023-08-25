@@ -55,22 +55,38 @@ function Form({ setShowForm, addPassword }: FormProps) {
 
   return (
     <form onSubmit={ handleSumit }>
-      <label htmlFor="service">
-        Nome do Serviço
-        <input onChange={ handleChange } name="service" value={ formData.service } />
-      </label>
-      <label htmlFor="login">
-        Login
-        <input onChange={ handleChange } name="login" value={ formData.login } />
-      </label>
-      <label htmlFor="password">
-        Senha
-        <input onChange={ handleChange } name="password" value={ formData.password } />
-      </label>
-      <label htmlFor="url">
-        URL
-        <input onChange={ handleChange } name="url" value={ formData.url } />
-      </label>
+      <label htmlFor="service">Nome do Serviço</label>
+      <input
+        onChange={ handleChange }
+        type="text"
+        name="service"
+        id="service"
+        value={ formData.service }
+      />
+      <label htmlFor="login">Login</label>
+      <input
+        onChange={ handleChange }
+        type="text"
+        name="login"
+        id="login"
+        value={ formData.login }
+      />
+      <label htmlFor="password">Senha</label>
+      <input
+        onChange={ handleChange }
+        type="password"
+        name="password"
+        id="password"
+        value={ formData.password }
+      />
+      <label htmlFor="url">URL</label>
+      <input
+        onChange={ handleChange }
+        type="text"
+        name="url"
+        id="url"
+        value={ formData.url }
+      />
       <button
         type="submit"
         disabled={ isFormValid() }
