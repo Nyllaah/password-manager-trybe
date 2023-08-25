@@ -17,7 +17,7 @@ function PasswordList({ passwordList, handleRemove, handleCheckbox,
             id={ index }
             service={ service }
             login={ login }
-            password={ !showPasswords ? password : '******' }
+            password={ showPasswords ? password : '******' }
             url={ url }
             handleRemove={ handleRemove }
           />
