@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 import Title from './components/Title';
 import Form from './components/Form';
@@ -14,6 +15,12 @@ function App() {
 
   const addPassword = (newPassword: FormDataProps) => {
     setPasswordList([...passwordList, newPassword]);
+    Swal.fire({
+      icon: 'success',
+      title: 'Serviço cadastrado com sucesso',
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   const handleRemove = (id: number) => {
