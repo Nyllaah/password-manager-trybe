@@ -5,9 +5,12 @@ function PasswordList({ passwordList, handleRemove, handleCheckbox,
   showPasswords }: PasswordListProps) {
   return (
     <>
-      <div className="checkbox">
-        <input type="checkbox" id="hide-passwords" onChange={ handleCheckbox } />
-        <label htmlFor="hide-passwords">Esconder senhas</label>
+      <div className="checkbox-container">
+        <label htmlFor="check">Esconder Senhas</label>
+        <input type="checkbox" id="check" onChange={ handleCheckbox } />
+        <label htmlFor="check" className="button">
+          <span className="slider" />
+        </label>
       </div>
       {passwordList.map((card, index) => {
         const { service, login, password, url } = card;

@@ -31,6 +31,7 @@ h1 {
   border: 0;
   border-radius: 100px;
   color: white;
+  cursor: pointer;
   flex-shrink: 0;
   font-family: Roboto , sans-serif;
   font-size: 18px;
@@ -53,15 +54,18 @@ h1 {
   margin-top: 160px;
 }
 
+.locker-img {
+  background-image: url('./images/locker-img.svg');
+}
+
 form {
-  align-content: center;
   background: #1e2029;
   border-radius: 10px;
   display: flex;
   flex-shrink: 0;
-  height: 412px;
   justify-content: space-around;
   margin-bottom: 71px;
+  padding: 30px;
   width: 897px;
 }
 
@@ -73,12 +77,14 @@ form {
   width: 525px;
 }
 
-input {
+.form-container input {
   background: #3b3f50;
   border: 0;
   border-radius: 10px;
+  color: white;
   flex-shrink: 0;
   height: 53px;
+  padding-left: 10px;
   width: 523px;
 }
 
@@ -91,15 +97,21 @@ label, .mandatory-message {
   line-height: normal;
 }
 
+.mandatory-message {
+  margin-top: 20px;
+}
+
 .input-container {
   align-items: start;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .login-password-container {
   display: flex;
   justify-content: space-between;
+  width: 535px;
 }
 
 .login-password-container input {
@@ -116,14 +128,14 @@ label, .mandatory-message {
   flex-shrink: 0;
   height: 53px;
   justify-content: space-between;
-  padding: 0 10px;
-  width: 236px;
+  padding: 0 10px 0 0;
+  width: 251px;
 }
 
 .password-container input {
-  background-color: aliceblue;
+  background-color: #3b3f50;
   height: 45px;
-  width: 190px;
+  width: 195px;
 }
 
 .hide-btn {
@@ -133,6 +145,7 @@ label, .mandatory-message {
   background-repeat: no-repeat;
   background-size: contain;
   border: 0;
+  cursor: pointer;
   flex-shrink: 0;
   height: 26px;
   margin-top: 10px;
@@ -146,6 +159,7 @@ label, .mandatory-message {
   background-repeat: no-repeat;
   background-size: contain;
   border: 0;
+  cursor: pointer;
   flex-shrink: 0;
   height: 26px;
   margin-top: 10px;
@@ -159,6 +173,7 @@ label, .mandatory-message {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin: 0 5px;
 }
 
 .btn-container {
@@ -171,6 +186,7 @@ label, .mandatory-message {
   border: 0;
   border-radius: 100px;
   color: #3590f5;
+  cursor: pointer;
   flex-shrink: 0;
   font-family: Roboto , sans-serif;
   font-size: 18px;
@@ -178,14 +194,37 @@ label, .mandatory-message {
   font-weight: 700;
   height: 55px;
   line-height: normal;
-  margin-bottom: 58px;
   text-align: left;
   width: 256px;
 }
 
+.submit-btn {
+  background: #3590f5;
+  border-radius: 100px;
+  color: white;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: Roboto , sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  height: 55px;
+  line-height: normal;
+  margin-bottom: 0;
+  width: 211px;
+}
+
+.arrow-img {
+  left: 20px;
+  position: relative;
+  top: 107px;
+}
+
 .pw-requirements {
+  align-self: center;
   background: #252730;
   border-radius: 10px;
+  bottom: 50px;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -196,16 +235,9 @@ label, .mandatory-message {
   height: 147px;
   justify-content: space-around;
   line-height: normal;
+  position: relative;
   text-align: left;
   width: 263px;
-}
-
-.checkbox {
-  background: #3590f5;
-  border-radius: 50px;
-  flex-shrink: 0;
-  height: 20px;
-  width: 40px;
 }
 
 .valid-password-check {
@@ -214,4 +246,50 @@ label, .mandatory-message {
 
 .invalid-password-check {
   color: #f58989;
+}
+
+.checkbox-container {
+  align-items: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  background-color: rgb(179, 179, 179);
+  border-radius: 50px;
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 20px;
+  margin-left: 10px;
+  position: relative;
+  width: 40px;
+}
+
+.button:before {
+  background-color: white;
+  border-radius: 50px;
+  content: '';
+  flex-shrink: 0;
+  height: 18px;
+  margin: 1px;
+  position: absolute;
+  width: 18px;
+}
+
+/* stylelint-disable-next-line selector-max-specificity */
+#check:checked + .button {
+  background-color: #3590f5;
+}
+
+/* stylelint-disable-next-line selector-max-specificity */
+#check:checked + .button:before {
+  transform: translateX(-20px);
+}
+
+/* stylelint-disable-next-line selector-max-specificity */
+#check {
+  display: none;
 }

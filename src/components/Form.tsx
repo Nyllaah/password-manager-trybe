@@ -139,10 +139,10 @@ function Form({ setShowForm, addPassword }: FormProps) {
             id="url"
             value={ formData.url }
           />
-          <div>
+          <span className="mandatory-message">
             <span className="mandatory">*</span>
-            <span className="mandatory-message">Campos obrigatório</span>
-          </div>
+            Campos obrigatório
+          </span>
         </div>
         <div className="btn-container">
           <button
@@ -155,13 +155,15 @@ function Form({ setShowForm, addPassword }: FormProps) {
           <button
             type="submit"
             disabled={ isFormValid() }
-            className="new-pw-btn"
+            className="submit-btn"
           >
             Cadastrar
           </button>
         </div>
       </div>
-
+      <svg className="arrow-img" xmlns="http://www.w3.org/2000/svg" width="21" height="42" viewBox="0 0 21 42" fill="none">
+        <path d="M0.5 21L21 0.5V41.5L0.5 21Z" fill="#252730" />
+      </svg>
       <ul className="pw-requirements">
         <li className={ passwordValidation(isPasswordTooShort) }>
           Possuir 8 ou mais caracteres
