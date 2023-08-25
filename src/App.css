@@ -257,7 +257,7 @@ label, .mandatory-message {
 }
 
 .button {
-  background-color: rgb(179, 179, 179);
+  background-color: #9cbce0;
   border-radius: 50px;
   cursor: pointer;
   flex-shrink: 0;
@@ -348,4 +348,10 @@ a {
   font-weight: 400;
   line-height: normal;
   text-align: right;
+}
+
+.list-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }

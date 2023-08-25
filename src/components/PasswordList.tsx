@@ -12,20 +12,22 @@ function PasswordList({ passwordList, handleRemove, handleCheckbox,
           <span className="slider" />
         </label>
       </div>
-      {passwordList.map((card, index) => {
-        const { service, login, password, url } = card;
-        return (
-          <PasswordCard
-            key={ index }
-            id={ index }
-            service={ service }
-            login={ login }
-            password={ showPasswords ? password : '******' }
-            url={ url }
-            handleRemove={ handleRemove }
-          />
-        );
-      })}
+      <div className="list-container">
+        {passwordList.map((card, index) => {
+          const { service, login, password, url } = card;
+          return (
+            <PasswordCard
+              key={ index }
+              id={ index }
+              service={ service }
+              login={ login }
+              password={ showPasswords ? password : '******' }
+              url={ url }
+              handleRemove={ handleRemove }
+            />
+          );
+        })}
+      </div>
     </>
   );
 }
