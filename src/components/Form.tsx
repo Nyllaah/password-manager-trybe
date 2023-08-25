@@ -9,6 +9,8 @@ function Form({ setShowForm, addPassword }: FormProps) {
     url: '',
   });
 
+  const [type, setType] = useState('password');
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
     setFormData({
@@ -74,11 +76,19 @@ function Form({ setShowForm, addPassword }: FormProps) {
       <label htmlFor="password">Senha</label>
       <input
         onChange={ handleChange }
-        type="password"
+        type={ type }
         name="password"
         id="password"
         value={ formData.password }
       />
+      <button
+        type="button"
+        data-testid="show-hide-form-password"
+        onClick={ () => (type === 'password' ? setType('text') : setType('password')) }
+      >
+        Mostrar
+
+      </button>
       <label htmlFor="url">URL</label>
       <input
         onChange={ handleChange }
